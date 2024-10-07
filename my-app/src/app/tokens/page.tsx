@@ -126,13 +126,17 @@ const Tokens: React.FC = () => {
         </div>
       </div>
 
-      {/* Footer with Blinking Buttons */}
+      {/* Footer with Buttons */}
       <footer className="absolute bottom-6 left-4">
         <div className="flex space-x-4">
           {['Token', 'NFT', 'Custom Blinks'].map((button, index) => (
             <button
               key={button}
-              className={`px-16 py-3 border border-dotted border-green-500 bg-transparent rounded-lg text-green-500 animate-pulse hover:bg-green-500 hover:text-white transition-colors ${button === 'Token' ? 'bg-green-500 text-white' : ''}`}
+              className={`px-16 py-3 border border-dotted border-green-500 rounded-lg transition-colors ${
+                button === 'Token'
+                  ? 'bg-green-500 text-white' // Active token button style
+                  : 'bg-transparent text-green-500 hover:bg-green-500 hover:text-white' // Inactive button style
+              }`}
             >
               {button}
             </button>

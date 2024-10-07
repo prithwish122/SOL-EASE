@@ -1,10 +1,11 @@
+// pages/index.tsx
 import Link from 'next/link';
 import Navbar from './components/Navbar';
 
 const Home: React.FC = () => {
   return (
     <div
-      className="w-screen h-[100vh] bg-cover bg-center overflow-x-hidden"
+      className="w-screen h-screen bg-cover bg-center overflow-x-hidden"
       style={{ backgroundImage: "url('/bgSolEase.png')" }}
     >
       <Navbar />
@@ -21,8 +22,9 @@ const Home: React.FC = () => {
             NFT
           </button>
           <button className="px-20 py-4 bg-transparent border-2 border-dotted border-green-500 text-green-500 rounded-md hover:bg-green-500 hover:text-white transition-colors">
-            Blinks
+            CustomBlinks
           </button>
+          {/* Uncomment to add more buttons */}
           {/* <button className="px-20 py-4 bg-transparent border-2 border-dotted border-green-500 text-green-500 rounded-md hover:bg-green-500 hover:text-white transition-colors">
             SolanaPlayground
           </button> */}
