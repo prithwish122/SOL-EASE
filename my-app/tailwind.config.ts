@@ -8,9 +8,8 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+      boxShadow: {
+        'custom-glow': '0 0 10px rgba(0, 255, 0, 0.7)',
       },
     },
   },
