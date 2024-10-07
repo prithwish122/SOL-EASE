@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { MdSchema } from "react-icons/md"; // Updated icon
 import { FaUserCircle } from "react-icons/fa"; // Profile icon
+import { AiOutlineHome } from "react-icons/ai"; // Home icon
 import Link from 'next/link'; // Use Link to navigate
 import Image from "next/image";
 
@@ -35,7 +36,7 @@ const Navbar = () => {
         setAccount(accounts[0]); // Store the first account address
         console.log('Connected account:', accounts[0]);
 
-        // Fetch the balance here (for example purposes, set to 15 DC)
+        // Fetch the balance here (for example purposes, set to 15 AI)
         setBalance('15 AI'); // Replace this with your logic to fetch balance
       } catch (error) {
         console.error("User denied wallet connection or another error occurred:", error);
@@ -57,15 +58,22 @@ const Navbar = () => {
       </div>
       <div className="flex items-center space-x-4">
 
+        {/* Home Button */}
+        <Link href="/">
+          <button className="text-white bg-green-500 hover:bg-green-400 transition duration-300 px-4 py-2 rounded-lg flex items-center space-x-2 transform hover:scale-105">
+            <AiOutlineHome className="text-2xl" />
+            {/* <span>Home</span> */}
+          </button>
+        </Link>
+
         <Link href={`/profile?account=${account}&balance=${balance}`}>
-            <button 
-              className="text-white bg-green-500 hover:bg-green-400 transition duration-300 px-4 py-2 rounded-lg flex items-center space-x-2 transform hover:scale-105"
-            >
-              <FaUserCircle className="text-2xl" />
-              <span>Profile</span>
-            </button>
-          </Link>
-        {/* )} */}
+          <button 
+            className="text-white bg-green-500 hover:bg-green-400 transition duration-300 px-4 py-2 rounded-lg flex items-center space-x-2 transform hover:scale-105"
+          >
+            <FaUserCircle className="text-2xl" />
+            {/* <span>Profile</span> */}
+          </button>
+        </Link>
 
         {/* Connect MetaMask Button */}
         <button 
